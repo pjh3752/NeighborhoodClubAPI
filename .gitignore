@@ -2,7 +2,7 @@
 .gradle
 .idea
 
-application.yml
+application-real-oauth.yml
 
 build
 out
