@@ -7,16 +7,19 @@ import com.neighborhoodclub.api.security.UserPrincipal;
 import com.neighborhoodclub.api.security.oauth2.CurrentUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
+@RequestMapping("/v1")
 @RestController
 public class UserController {
 
     private final UserRepository userRepository;
 
-    @GetMapping("/user/me")
+    @GetMapping("/users/me")
     public User getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
+
         return userRepository.findById(userPrincipal.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
