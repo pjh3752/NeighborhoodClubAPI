@@ -90,6 +90,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .authorizeRequests()
                     .antMatchers("/",
+                        "/profile",
                         "/h2-console/**",
                         "/error",
                         "/favicon.ico",
