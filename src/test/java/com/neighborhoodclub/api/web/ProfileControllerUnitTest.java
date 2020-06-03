@@ -1,4 +1,3 @@
-/*
 package com.neighborhoodclub.api.web;
 
 import org.junit.Test;
@@ -58,4 +57,4 @@ public class ProfileControllerUnitTest {
         //then
         assertThat(profile).isEqualTo(expectedProfile);
     }
-}*/
+}
